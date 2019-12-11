@@ -14,8 +14,6 @@ class Weather extends React.Component {
    _getWeather = () => {
      this.setState({isFetching: true});
 
-     // 56645240fb8557e9181df32fae1de3ad
-
      if ( this.state.zipcode !== undefined && this.state.zipcode.length === 5 && !isNaN(this.state.zipcode) ) {
        fetch('https://api.openweathermap.org/data/2.5/forecast?zip=' + this.state.zipcode + ',us&APPID=' + apiKey + '&units=imperial')
             .then(response => {
